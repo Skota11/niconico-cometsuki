@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Niconico Recorder Options</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            padding: 16px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px
+        }
+    </style>
+</head>
+
+<body>
+    <h1>拡張機能の設定</h1>
+    <label>
+        ダウンロードフォルダパス
+        <input id="downloadPath" type="text" placeholder="例: /Users/you/Downloads/niconico" style="width:100%">
+    </label>
+
+    <label>
+        自動で録画を開始
+        <input id="autoStart" type="checkbox">
+    </label>
+
+    <button id="save">保存</button>
+    <div id="status" role="status" aria-live="polite"></div>
+
+    <script>
+        const downloadPathInput = document.getElementById('downloadPath');
+        const autoStartInput = document.getElementById('autoStart');
+        const saveBtn = document.getElementById('save');
+        const status = document.getElementById('status');
+
+        function loadOptions() {
+            chrome.storage.sync.get({ downloadPath: '', autoStart: false }, (items) => {
+                downloadPathInput.value = items.downloadPath || '';
+                autoStartInput.checked = !!items.autoStart;
+            });
+        }
+
+        saveBtn.addEventListener('click', () => {
+            chrome.storage.sync.set({
+                downloadPath: downloadPathInput.value,
+                autoStart: autoStartInput.checked
+            }, () => {
+                status.textContent = '保存しました';
+                setTimeout(() => status.textContent = '', 1500);
+            });
+        });
+
+        loadOptions();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            width: 320px;
+            padding: 12px;
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+        }
+
+        h3 {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+            color: purple;
+        }
+
+        .option {
+            margin: 8px 0;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .option input {
+            margin-right: 8px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 12px;
+            padding: 10px;
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        button:hover {
+            background-color: #660066;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>ニコニココメ付き保存</h1>
+    <p>ニコニコ動画とニコニコ生放送に対応。</p>
+    <p>画質はプレイヤーの画質に依存しています。720p以上の画質設定をおすすめします。</p>
+    <h3>録画品質の設定</h3>
+    <label class="option">
+        <input type="radio" name="quality" value="low"> 低品質 (2Mbps / 30fps / 等倍)
+    </label>
+    <label class="option">
+        <input type="radio" name="quality" value="medium" checked> 中品質 (6Mbps / 60fps / 等倍)
+    </label>
+    <label class="option">
+        <input type="radio" name="quality" value="high"> 高品質 (10Mbps / 60fps / 1.5倍)
+    </label>
+
+    <h3>保存形式の設定</h3>
+    <label class="option">
+        <input type="radio" name="format" value="mp4" checked> MP4 (.mp4)
+    </label>
+    <label class="option">
+        <input type="radio" name="format" value="webm"> WebM (.webm)
+    </label>
+
+    <button id="startBtn">録画開始</button>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
