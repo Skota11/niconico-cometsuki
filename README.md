@@ -44,11 +44,11 @@
 - 本ツールを使用したことによるいかなる問題についても、開発者は責任を負いません。
 
 ## スクリーンショット
-<img width="419" height="494" alt="image" src="https://github.com/user-attachments/assets/a9f7ccf4-1399-4e41-85d3-4c64538ccb31" /> 
+![](https://github.com/user-attachments/assets/a9f7ccf4-1399-4e41-85d3-4c64538ccb31)
 
 ポップアップ
 
-<img width="1422" height="708" alt="image" src="https://github.com/user-attachments/assets/79e5e2e0-f0e0-4e9f-a37b-e181b5ef0e74" /> 
+![](https://github.com/user-attachments/assets/79e5e2e0-f0e0-4e9f-a37b-e181b5ef0e74)
 
 録画中
 
